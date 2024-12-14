@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed = 5f; // Adjust the speed in the Inspector
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Get input from the horizontal axis (A/D keys or Left/Right arrows)
+        float move = Input.GetAxis("Horizontal");
+
+        // Move the player left or right
+        transform.position += new Vector3(move * speed * Time.deltaTime, 0, 0);
     }
 }
